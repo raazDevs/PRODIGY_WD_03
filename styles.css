@@ -1,0 +1,123 @@
+/* Reset styles for all elements */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Bodoni MT', Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+    line-height: 1.6;
+    background-color: #12181B;
+    color: rgb(107, 62, 38);
+}
+
+.background {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.display {
+    font-size: 1.25em;
+    text-align: center;
+    margin: 1em 0;
+}
+
+.hide {
+    display: none;
+}
+
+.container {
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(80px, 1fr));
+    grid-template-rows: repeat(3, minmax(80px, 1fr));
+    gap: 10px;
+    max-width: 300px;
+}
+
+.tile {
+    border: 1px solid #6B3E26;
+    min-width: 80px;
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.tile:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+.playerX, .playerO {
+    font-weight: bold;
+}
+
+.playerX {
+    color: #6B3E26;
+}
+
+.playerO {
+    color: #FF3860;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.controls button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1.2em;
+    margin-left: 1em;
+    cursor: pointer;
+    background-color: #FF3860;
+    transition: background-color 0.3s ease;
+}
+
+.controls button:hover {
+    background-color: #E03154;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        max-width: 100%;
+        grid-template-columns: repeat(3, minmax(60px, 1fr));
+    }
+
+    .tile {
+        min-width: 60px;
+        min-height: 60px;
+        font-size: 1.5em;
+    }
+
+    .controls button {
+        font-size: 1em;
+    }
+}
+
+.credit {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #6B3E26;
+    margin: 10px;
+}
